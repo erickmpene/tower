@@ -3,16 +3,6 @@
   hosts: prod
   become: true
   pre_tasks:
-    # - name: Install some package
-    #   package:
-    #     name: "{{ item }}"
-    #     state: present
-    #   when: ansible_distribution == "CentOS"
-    #   loop:
-    #     - epel-release
-    #     - wget
-    #     - git
-
     - name: Install docker python
       pip:
         name: docker-py
