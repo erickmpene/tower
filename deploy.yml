@@ -16,7 +16,7 @@
 
     - name: Add user cool to docker group
       user:
-        name: cool
+        name: "{{ ansible_user }}"
         groups: docker
         append: yes
 
@@ -38,4 +38,4 @@
         ports:
           - "{{ container_port_exposed }}"
         volumes:
-          - /home/cool/index.html:/usr/local/apache2/htdocs/index.html
+          - /home/{{ ansible_user }}/index.html:/usr/local/apache2/htdocs/index.html
