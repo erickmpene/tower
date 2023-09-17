@@ -14,7 +14,7 @@
       - curl -fsSL https://get.docker.com -o install-docker.sh
       - sh install-docker.sh
 
-    - name: Add user {{ ansible_user }} to docker group
+    - name: Add user "{{ ansible_user }}" to docker group
       user:
         name: "{{ ansible_user }}"
         groups: docker
